@@ -1,0 +1,3 @@
+/* static build helpers (no visual change) */
+html{scroll-behavior:smooth}
+.dk-gslide{transition:opacity 1.1s ease-in-out}
