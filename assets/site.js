@@ -42,7 +42,7 @@ $$('a[data-nav]').forEach(function(a){ a.addEventListener('click',function(ev){ 
   function start(){ stop(); if(!paused) t=setInterval(function(){show(i+1);},6000); }
   function stop(){ if(t){clearInterval(t);t=null;} }
   dots.forEach(function(d,k){ d.addEventListener('click',function(){show(k);start();}); });
-  root.addEventListener('mouseenter',function(){paused=true;stop();}); root.addEventListener('mouseleave',function(){paused=false;start();});
+  root.addEventListener('pointerenter',function(e){if(e.pointerType!=='mouse')return;paused=true;stop();}); root.addEventListener('pointerleave',function(e){if(e.pointerType!=='mouse')return;paused=false;start();});
   show(0); start();
 })();
 
